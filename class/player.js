@@ -35,24 +35,20 @@ class Player {
 
     takeItem(itemName) {
         // Picks up an item from the current room into the player's inventory
-
-        // Your code here
         let item = this.currentRoom.getItemByName(itemName);
-        if(item){
-            this.items.push(item)
-        }
+        if(item) this.items.push(item)
     }
 
     dropItem(itemName) {
         let item = this.getItemByName(itemName);
-
-        this.currentRoom.items.push(item)
+        if (item) this.currentRoom.items.push(item)
     }
 
     eatItem(itemName) {
-        // Allow the player to eat food items, but not non-food items
-
-        // Your code here
+        let item = this.getItemByName(itemName)
+        if (!(item instanceof Food)) { // If not food
+            this.items.push(item) // Don't eat
+        }
     }
 
     getItemByName(name) {
