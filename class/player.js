@@ -37,12 +37,16 @@ class Player {
         // Picks up an item from the current room into the player's inventory
 
         // Your code here
+        let item = this.currentRoom.getItemByName(itemName);
+        if(item){
+            this.items.push(item)
+        }
     }
 
     dropItem(itemName) {
-        // Drops an item the player is holding into their current room
+        let item = this.getItemByName(itemName);
 
-        // Your code here
+        this.currentRoom.items.push(item)
     }
 
     eatItem(itemName) {

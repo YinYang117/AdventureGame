@@ -13,7 +13,6 @@ module.exports = {
 
 /*
 Item
-    3) player.getItemByName - Retrieves an item from a player's inventory by item name
     4) player.takeItem - Picks up an item from the current room into the player's inventory
     5) player.takeItem - When an item is taken, it is removed from the current room
     6) player.dropItem - Drops an item the player is holding into their current room
